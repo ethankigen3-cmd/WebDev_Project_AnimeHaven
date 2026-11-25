@@ -147,6 +147,7 @@ main img {
     margin: 20px auto;
     border-radius: 10px;
     font-size: 30px;
+    transition:all 0.3s ease-in-out;
 }
 
 .about-nav a {

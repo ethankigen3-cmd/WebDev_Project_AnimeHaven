@@ -159,8 +159,6 @@ main img {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
-    transition: background-color 0.3s ease,
-                color 0.3s ease;
 }
 
 .about-nav a:hover {

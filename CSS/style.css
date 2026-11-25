@@ -147,7 +147,11 @@ main img {
     margin: 20px auto;
     border-radius: 10px;
     font-size: 30px;
-    transition:all 0.3s ease-in-out;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .about-nav a {
@@ -155,6 +159,8 @@ main img {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
 }
 
 .about-nav a:hover {
@@ -188,7 +194,7 @@ main img {
     }
 
     #discover {
-        font-size: 21px;
+        font-size: 20px;
         padding: 10px;
     }
 
@@ -197,13 +203,13 @@ main img {
     }
 
     #aboutpage main {
-        width: 95%;
+        width: 100%;
         padding: 20px;
         margin: 20px auto;
     }
 
     .parag {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     main img {

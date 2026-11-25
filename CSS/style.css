@@ -147,11 +147,6 @@ main img {
     margin: 20px auto;
     border-radius: 10px;
     font-size: 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
 }
 
 .about-nav a {

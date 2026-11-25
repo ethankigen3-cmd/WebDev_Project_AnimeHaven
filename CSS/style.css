@@ -1,11 +1,22 @@
+/* Makes width and padding easier to control */
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------------- HOME PAGE ---------------- */
 
 .homepage {
     background-image: url("../images/backgroundimage.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200vh;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .hero {
@@ -13,37 +24,62 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .title {
     text-align: center;
     color: white;
-    background-color:grey;
+    background-color: grey;
     font-size: 50px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.heading {
-    text-align: center;
-    background-color: slategrey;
-    font-size: 30px;
     padding: 20px;
     margin: 0;
 }
 
+/* Navigation container */
+.heading {
+    background-color: slategrey;
+    font-size: 30px;
+    padding: 20px;
+
+    /* Flexbox requirement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
 .heading a {
     color: white;
+    background-color: transparent;
     text-decoration: none;
-    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    /* Smooth animation/transition requirement */
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Hover-effect requirement */
+.heading a:hover {
+    color: black;
+    background-color: orangered;
+    transform: scale(1.1);
+}
+
+/* Keyboard accessibility */
+.heading a:focus {
+    color: black;
+    background-color: orangered;
+    outline: 3px solid white;
 }
 
 .homepage main {
     width: 90%;
     max-width: 1200px;
     background-color: white;
-
     padding: 30px;
     border: 5px solid slategrey;
     margin: 40px auto;
@@ -55,7 +91,6 @@
     font-size: 30px;
     background-color: slategrey;
     color: white;
-
     padding: 15px;
     margin: 0 0 25px;
     border: 3px solid black;
@@ -66,11 +101,26 @@ main img {
     width: 100%;
     max-width: 1000px;
     height: auto;
-
     padding: 5px;
     border: 4px solid orangered;
     margin: 20px auto;
 }
+
+.photocredit {
+    text-align: center;
+    font-size: 14px;
+}
+
+.photocredit a {
+    color: orangered;
+    font-weight: bold;
+}
+
+.photocredit a:hover {
+    color: darkred;
+}
+
+/* ---------------- ABOUT PAGE ---------------- */
 
 #toppage {
     background-color: slategrey;
@@ -82,7 +132,6 @@ main img {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     min-height: 100vh;
     padding: 30px;
 }
@@ -98,9 +147,9 @@ main img {
 #aboutpage main {
     width: 80%;
     max-width: 900px;
-
+    background-color: white;
     padding: 40px;
-    border: 5px solid rgb(0, 0, 0);
+    border: 5px solid black;
     margin: 40px auto;
     border-radius: 15px;
 }
@@ -117,13 +166,125 @@ main img {
     text-align: center;
     font-size: 20px;
     line-height: 1.6;
-    color: rgb(0, 0, 0);
+    color: black;
 }
+
 .about-nav {
     background-color: black;
-    text-align: center;
     padding: 15px;
     margin: 20px auto;
     border-radius: 10px;
-    font-size:50px;
+    font-size: 30px;
+
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
+
+.about-nav a {
+    color: orangered;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.about-nav a:hover {
+    color: black;
+    background-color: orangered;
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+
+/* Mobile devices: below 600px */
+@media screen and (max-width: 599px) {
+    .title {
+        font-size: 30px;
+        padding: 15px;
+    }
+
+    .heading,
+    .about-nav {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 22px;
+    }
+
+    .heading a,
+    .about-nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .homepage main {
+        width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    #discover {
+        font-size: 21px;
+        padding: 10px;
+    }
+
+    #aboutpage {
+        padding: 10px;
+    }
+
+    #aboutpage main {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .parag {
+        font-size: 16px;
+    }
+
+    main img {
+        border-width: 3px;
+    }
+}
+
+/* Tablet devices: 600px to 1024px */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .heading,
+    .about-nav {
+        flex-wrap: wrap;
+        font-size: 25px;
+        gap: 20px;
+    }
+
+    .homepage main {
+        width: 90%;
+        padding: 25px;
+    }
+
+    #aboutpage main {
+        width: 90%;
+        padding: 30px;
+    }
+
+    #discover {
+        font-size: 26px;
+    }
+}
+
+/* Desktop screens: above 1024px */
+@media screen and (min-width: 1025px) {
+    .homepage main {
+        max-width: 1200px;
+    }
+
+    #aboutpage main {
+        max-width: 900px;
+    }
+}
+
